@@ -9,7 +9,7 @@ Sebastian Galeano - sgalean7@eafit.edu.co
 
 # Introducción:
 
-El proyecto 3 consistió en diseñar e implementar un algoritmo paralelo que permitiera agrupar (clustering) un conjunto de documentos utilizando el algoritmo de k–means y una métrica de similaridad entre documentos. El dataset utilizado para las pruebas fue el de Gutenberg, que cuenta con alrededor de 3000 documentos; teniendo estos documentos la idea además de solucionar el problema planteado era analizar las diferencias entre un programa en paralelo y otro serial.
+El Proyecto4 de la materia Tópicos Especiales en Telemática consistió en diseñar e implementar una aplicación con tecnología y modelo de programación distribuida en Big Data, específicamente con tecnología Hadoop y Spark que permitiera agrupar (clustering) un conjunto de documentos utilizando el algoritmo de k–means y una métrica de similaridad entre documentos.
 
 # Algoritmos empleados y solución:
 
