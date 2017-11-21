@@ -13,17 +13,12 @@ El Proyecto4 de la materia Tópicos Especiales en Telemática consistió en dise
 
 # Algoritmos empleados y solución:
 
-Básicamente se emplearon 2 algoritmos, el kMeans para agupar los documentos, y el Jaccard para medir la similaridad entre estos; al jaccard le pasamos las 10 palabras más repetidas por documento, sin tener en cuenta las "Stopwords" que son un conjunto de palabras que no sirven para saber de que trata un documento (Ej: the, it, why, else ...); despues se usa lo que devuelve el jaccard en el algoritmo de Kmeans dando como resultado el numero de clusters deseados con los documentos agrupados.
+Básicamente se emplearon 2 algoritmos, el kMeans para agupar los documentos, y el TF-IDF para medir la similaridad entre estos; al jaccard le pasamos las 10 palabras más repetidas por documento, sin tener en cuenta las "Stopwords" que son un conjunto de palabras que no sirven para saber de que trata un documento (Ej: the, it, why, else ...); despues se usa lo que devuelve el tf-idf en el algoritmo de Kmeans dando como resultado el numero de clusters deseados con los documentos agrupados.
 
 # A continuación se explica el funcionamiento de cada uno.
 
-## Jaccard:
-
-El índice de Jaccard ( IJ ) o coeficiente de Jaccard ( IJ ) mide el grado de similitud entre dos conjuntos, sea cual sea el tipo de elementos; gracias a esto elegimos este algoritmo ya que nos permitia medir la similitud entre dos documentos teniendo las palabras mas utilizadas.
-
-La formulación es la siguiente:
-
-J(A,B) = |A ∩ B| / |A ∪ B|
+## TF-IDF
+La frecuencia de los documentos - frecuencia inversa de los términos (TF-IDF) es un método de vectorización de características ampliamente utilizado en la minería de textos para reflejar la importancia de un término a un documento en el cuerpo. Denote un término por tt, un documento por dd, y el cuerpo por DD. La frecuencia de términos TF (t, d) es el número de veces que aparece el término tt en el documento dd, mientras que la frecuencia de los documentos DF (t, D) DF es el número de documentos que contiene el término tt. Si solo usamos la frecuencia de los términos para medir la importancia, es muy fácil enfatizar demasiado términos que aparecen muy a menudo pero que contienen poca información sobre el documento, por ejemplo, "A", "el" y "de". Si un término aparece muy a menudo en el cuerpo, significa que no contiene información especial sobre un documento en particular.
 
 ## K-means:
 
@@ -43,9 +38,8 @@ El algoritmo se compone de los siguientes pasos:
 
 # Ejecución programas:
 
-Para correr el programa serial, se debe ejecutar el sifuiente comando: python2.7 serial.py ./{Carpeta del dataset}/
+Para correr el programa, se debe ejecutar el siguiente comando: spark-submit --master yarn --deploy-mode cluster --executor-memory 2G --num-executors 4 Practica4.py
 
-Para el paralelo, el comando es: mpiexec -np ${CORES} python ParaleloF ./{Carpeta del dataset}/
 
 # Aportes Externos:
 El algoritmo de Jaccard fue sacado de la siguiente pagina:
