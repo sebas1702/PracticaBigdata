@@ -38,10 +38,13 @@ El algoritmo se compone de los siguientes pasos:
 
 # Ejecución programas:
 
-Para correr el programa, se debe ejecutar el siguiente comando: spark-submit --master yarn --deploy-mode cluster --executor-memory 2G --num-executors 4 Practica4.py <entrada> <salida> <k>
-        <entrada> es la ruta del dataset a ser utilizado
-        <salida> es la ruta a ser usada para guardar la salida del algoritmo
-        <k> es el numero de centroides que usará el kmeans para generar ese numero de clusters
+Para correr el programa, se debe ejecutar el siguiente comando: spark-submit --master yarn --deploy-mode cluster --executor-memory 2G --num-executors 4 Practica4.py [entrada] [salida] [k]
+
+[entrada] es la ruta del dataset a ser utilizado
+
+[salida] es la ruta a ser usada para guardar la salida del algoritmo
+
+[k] es el numero de centroides que usará el kmeans para generar ese numero de clusters
 
 
 # Aportes Externos:
