@@ -13,7 +13,7 @@ El Proyecto4 de la materia Tópicos Especiales en Telemática consistió en dise
 
 # Algoritmos empleados y solución:
 
-Básicamente se emplearon 2 algoritmos, el kMeans para agupar los documentos, y el TF-IDF para medir la similaridad entre estos; al jaccard le pasamos las 10 palabras más repetidas por documento, sin tener en cuenta las "Stopwords" que son un conjunto de palabras que no sirven para saber de que trata un documento (Ej: the, it, why, else ...); despues se usa lo que devuelve el tf-idf en el algoritmo de Kmeans dando como resultado el numero de clusters deseados con los documentos agrupados.
+Básicamente se emplearon 2 algoritmos, el kMeans para agupar los documentos, y el TF-IDF para medir la similaridad entre estos; al tf-idf se le pasa el dataset para que este haga las comparaciones de las palabras entre los documentos y encuentre las palabras con mayor frecuencia y relevancia; despues se usa lo que devuelve el tf-idf en el algoritmo de Kmeans dando como resultado el numero de clusters deseados con los documentos agrupados.
 
 # A continuación se explica el funcionamiento de cada uno.
 
@@ -38,12 +38,21 @@ El algoritmo se compone de los siguientes pasos:
 
 # Ejecución programas:
 
-Para correr el programa, se debe ejecutar el siguiente comando: spark-submit --master yarn --deploy-mode cluster --executor-memory 2G --num-executors 4 Practica4.py
+Para correr el programa, se debe ejecutar el siguiente comando: spark-submit --master yarn --deploy-mode cluster --executor-memory 2G --num-executors 4 Practica4.py [entrada] [salida] [k]
+
+[entrada] es la ruta del dataset a ser utilizado
+
+[salida] es la ruta a ser usada para guardar la salida del algoritmo
+
+[k] es el numero de centroides que usará el kmeans para generar ese numero de clusters
 
 
 # Aportes Externos:
-El algoritmo de Jaccard fue sacado de la siguiente pagina:
-http://dataconomy.com/2015/04/implementing-the-five-most-popular-similarity-measures-in-python/
+El algoritmo de tf-idf fue sacado de la siguiente página:
+https://spark.apache.org/docs/2.2.0/mllib-feature-extraction.html#tf-idf
+
+Y el k-means fue tomado de:
+https://spark.apache.org/docs/2.2.0/mllib-clustering.html
 
 # Resultado del programa
 
@@ -56,9 +65,5 @@ https://www.gutenberg.org/
 
 https://goo.gl/LL4CgA
 
-http://dataconomy.com/2015/04/implementing-the-five-most-popular-similarity-measures-in-python/
-
-https://es.wikipedia.org/wiki/%C3%8Dndice_Jaccard
-
-http://www.cs.us.es/~fsancho/?e=43
+http://www.bmc.com/blogs/k-means-clustering-apache-spark/
 
